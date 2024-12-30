@@ -1,0 +1,11 @@
+scikit-learn
+statsmodels
+scipy
+darts
+plotly
+pandas
+matplotlib
+seaborn
+pmdarima
+arch
+git+https://github.com/fracdiff/fracdiff.git@0.9.1

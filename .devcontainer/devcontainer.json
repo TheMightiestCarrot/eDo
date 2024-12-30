@@ -1,0 +1,43 @@
+{
+  "name": "CUDA Dev Container",
+  "dockerFile": "../Dockerfile", // Path to your existing Dockerfile
+  "customizations": {
+    "vscode": {
+      "settings": {
+        //"terminal.integrated.defaultProfile.linux": "zsh",
+        "yaml.schemas": {
+          "/eDo/config_schema.json": "/eDo/config.yaml"
+        }
+      },
+      "extensions": [
+        "ms-python.python", // Python extension for VSCode
+        "ms-python.pylint", // Pylint extension for code linting
+        "ms-python.black-formatter",
+        "ms-toolsai.jupyter", // Jupyter support for notebooks
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "remoteUser": "root", // Adjust if necessary based on your Dockerfile setup
+  "runArgs": [
+    "--network",
+    "host",
+    "--gpus",
+    "all", // Use all available GPUs
+    "-v",
+    "${localWorkspaceFolder}:/eDo", // Mount your local workspace folder
+    "-v",
+    "${env:HOME}/.zsh_history:/root/.zsh_history",
+    "-v",
+    "${env:HOME}/bigdata/eDo/runs:/eDo/runs",
+    "-v",
+    "${env:HOME}/.cache/pip:/tmp/pip-cache"
+  ],
+  "workspaceFolder": "/eDo", // Path where your workspace is mounted inside the container
+  "containerEnv": {
+    "PYTHONPATH": "/eDo" // Helps with module resolution
+  },
+  "postCreateCommand": "./.devcontainer/setup.sh"
+}
