@@ -10,13 +10,14 @@
         }
       },
       "extensions": [
-        "ms-python.python", // Python extension for VSCode
-        "ms-python.pylint", // Pylint extension for code linting
+        "ms-python.python",
+        "ms-python.pylint",
         "ms-python.black-formatter",
-        "ms-toolsai.jupyter", // Jupyter support for notebooks
+        "ms-toolsai.jupyter",
         "ms-toolsai.jupyter-keymap",
         "ms-toolsai.jupyter-renderers",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "ms-toolsai.datawrangler"
       ]
     }
   },
