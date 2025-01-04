@@ -9,4 +9,5 @@ seaborn
 pmdarima
 arch
 ta
+shap
 git+https://github.com/fracdiff/fracdiff.git@0.9.1
