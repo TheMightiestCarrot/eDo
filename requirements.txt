@@ -10,4 +10,5 @@ pmdarima
 arch
 ta
 shap
+wandb
 git+https://github.com/fracdiff/fracdiff.git@0.9.1
